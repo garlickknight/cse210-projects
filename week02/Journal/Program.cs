@@ -36,14 +36,16 @@ class Program
                 Random prompt = new Random();
                 int index = prompt.Next(journalPrompt._questions.Count);
                 Console.WriteLine($"{journalPrompt._questions[index]}");
-                journalEntry = Console.ReadLine();
+                journalEntry = Console.ReadLine(); 
             }
             else if (choice == 2)
             {
                 // the brackets allow us to access the individual character that make up a string. 
                 Console.WriteLine($"What is the name of the file you would like to load?");
                 fileName = Console.ReadLine();
-                // string[] lines = System.IO.File.ReadAllLines(fileName);
+                string[] lines = System.IO.File.ReadAllLines(fileName);
+                Console.WriteLine(lines);
+
                 // foreach (string line in lines)
                 // {
                 //     string[] parts = line.Split(",");
